@@ -8,10 +8,10 @@ const validateForm = values => {
     const errors = {};
 
     if (values.dni.toString().length < 8 || values.dni.toString().length > 8) {
-        errors.dni = 'Dni es requerido!'
+        errors.dni = 'Dni es requerido, debe tener 8 caracteres!'
     }
     if (values.celular.toString().length < 9 || values.celular.toString().length > 9) {
-        errors.celular = 'Celular es requerido!'
+        errors.celular = 'Celular es requerido, debe tener 9 digitos!'
     }
     if (values.placa.length < 7 || values.placa.length > 7) {
         errors.placa = 'Placa es requerido!'
@@ -63,7 +63,7 @@ export const UserScreen = () => {
                         <input
                             type="number"
                             className="form-control"
-                            placeholder="Nro dni"
+                            placeholder="Nro dni 12345678"
                             name="dni"
                             value={dni}
                             onChange={handleInputChange}
@@ -79,7 +79,7 @@ export const UserScreen = () => {
                     <input
                         className="form-control"
                         type="number"
-                        placeholder="Celular"
+                        placeholder="987654321"
                         name="celular"
                         value={celular}
                         onChange={handleInputChange}
@@ -94,7 +94,7 @@ export const UserScreen = () => {
                     <input
                         type="text"
                         className="form-control"
-                        placeholder="Placa"
+                        placeholder="A3F-123"
                         name="placa"
                         value={placa}
                         onChange={handleInputChange}
